@@ -12,13 +12,22 @@
 </body>
 
 <script>
-    function createDivs (numOfDivs) {
+ 
+    function createDivs () {
         var e = document.body.querySelector("#container");
-        for (let i=0; i < numOfDivs; i++) {
+        for (let i=0; i < 256; i++) {
          row = document.createElement('div');
-          row.className = "row";
+          row.className = "cell";
           e.appendChild(row);
         }
     }
+    createDivs();
+  let listen = document.getElementsByClassName("cell")
+  for (let i=0; i< listen.length; i++) {
+      listen[i].addEventListener("mouseover", () => {
+          listen[i].classList.add("colored")
+      })
+  }
+
 </script>
 </html>
