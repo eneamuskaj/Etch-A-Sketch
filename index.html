@@ -7,26 +7,42 @@
     <title>Document</title>
 </head>
 <body>
+    <button onClick="clearScreen()">Clear Screen</button>
     <div id="container" class="grid-container">
     </div>
 </body>
 
 <script>
- 
-    function createDivs () {
+ var numberInput = prompt("Input the number of the desired cell");
+
+    createDivs(numberInput);
+
+    function createDivs (num) {
+        if (numberInput > 100) {
+            
+        } else {
         var e = document.body.querySelector("#container");
-        for (let i=0; i < 256; i++) {
+        for (let i=0; i < num*num; i++) {
          row = document.createElement('div');
           row.className = "cell";
           e.appendChild(row);
+          document.getElementById("container").style.gridTemplateColumns= `repeat(${num}, auto)`;
         }
     }
-    createDivs();
+    }
+    
   let listen = document.getElementsByClassName("cell")
   for (let i=0; i< listen.length; i++) {
       listen[i].addEventListener("mouseover", () => {
           listen[i].classList.add("colored")
       })
+  }
+
+
+
+  function clearScreen () {
+    location.reload();
+    createDivs();
   }
 
 </script>

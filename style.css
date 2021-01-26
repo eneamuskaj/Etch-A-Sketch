@@ -1,17 +1,18 @@
 .grid-container {
   display: grid;
-  height: 0px;
-  width: 0px;
+  height: 500px;
+  width: 500px;
   grid-template-columns: repeat(16, auto);
   background-color: #2196F3;
+  margin: auto;
+
 }
 
 .cell {
     background-color: lightblue;
-    border: 1px solid black;
-    padding: 20px;
-    width: 0px;
+    border: 0.1px solid black;
+
 }
 .colored {
-  background-color: red;
+  background-color: grey;
 }
