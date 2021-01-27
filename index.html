@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <button onClick="clearScreen()">Clear Screen</button>
-    <button onClick="colorize()">Colorize the palette</button>
+  <h1>Etch-A-Sketcher</h1>
+ 
+  <div class="buttons">
+    <button class="button" onClick="clearScreen()">Clear Screen</button>
+    <button class="button" onClick="colorize()">Colorize The Pattern</button>
+    <button class="button" onClick="makeItBlack()">Make It Black</button>
+    <button class="button" onClick="eraserPattern()">Eraser</button>
+  </div>
     <div id="container" class="grid-container">
+    
     </div>
 </body>
 
@@ -49,6 +58,23 @@ function colorize () {
   }
 }
 
+function makeItBlack () {
+  let listen2 = document.getElementsByClassName("cell");
+  for (let i=0; i< listen2.length; i++) {
+      listen2[i].addEventListener("mouseover", () => {
+          listen2[i].style.backgroundColor="black"
+      })
+  }
+}
+
+function eraserPattern () {
+  let listen2 = document.getElementsByClassName("cell");
+  for (let i=0; i< listen2.length; i++) {
+      listen2[i].addEventListener("mouseover", () => {
+        listen[i].style.backgroundColor="lightblue"
+      })
+  }
+}
 
 
   function clearScreen () {
