@@ -8,6 +8,7 @@
 </head>
 <body>
     <button onClick="clearScreen()">Clear Screen</button>
+    <button onClick="colorize()">Colorize the palette</button>
     <div id="container" class="grid-container">
     </div>
 </body>
@@ -18,8 +19,8 @@
     createDivs(numberInput);
 
     function createDivs (num) {
-        if (numberInput > 100) {
-            
+        if (num > 100) {
+            alert("please choose a number smaller than 100 and press the button")
         } else {
         var e = document.body.querySelector("#container");
         for (let i=0; i < num*num; i++) {
@@ -37,6 +38,16 @@
           listen[i].classList.add("colored")
       })
   }
+
+
+function colorize () {
+  let listen2 = document.getElementsByClassName("cell");
+  for (let i=0; i< listen2.length; i++) {
+      listen2[i].addEventListener("mouseover", () => {
+          listen2[i].style.backgroundColor= `rgb(${Math.floor(Math.random() * Math.floor(256))}, ${Math.floor(Math.random() * Math.floor(256))}, ${Math.floor(Math.random() * Math.floor(256))})`
+      })
+  }
+}
 
 
 
